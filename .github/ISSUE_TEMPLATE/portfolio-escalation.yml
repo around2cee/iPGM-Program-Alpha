@@ -1,0 +1,48 @@
+name: Portfolio Escalation
+description: Surface a blocker, milestone, or critical item on the iPGM Portfolio Board
+labels: ["portfolio-report"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Escalation Type
+      options: [Blocker, Key Milestone, Executive Update Required, Steering Committee Item, Dependency at Risk]
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: Escalation Summary
+      placeholder: One-line summary that will appear on the portfolio board
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Full Detail
+      placeholder: Provide full context — what is the issue, why does it matter, what is needed?
+    validations:
+      required: true
+  - type: input
+    id: impact
+    attributes:
+      label: Impact if Not Resolved
+      placeholder: "e.g. Delays Go-Live by 2 weeks, blocks 3 teams"
+  - type: input
+    id: needed_by
+    attributes:
+      label: Decision / Resolution Needed By
+      placeholder: "YYYY-MM-DD"
+  - type: input
+    id: owner
+    attributes:
+      label: Escalation Owner
+      placeholder: Name and role of the person owning this escalation
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        > This issue is pre-labeled `portfolio-report` and will automatically appear
+        > on the **iPGM Program Portfolio** board on the next sync.
+        > Keep this issue **open** until the escalation is resolved.
