@@ -1,0 +1,40 @@
+name: Action Item
+description: Track a specific action item with owner and due date (iPGM 5.4)
+labels: ["action-item"]
+body:
+  - type: input
+    id: action
+    attributes:
+      label: Action Required
+      placeholder: Clear description of what needs to be done
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      placeholder: Name of the person responsible
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: Due Date
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source Meeting / Context
+      placeholder: "e.g. Weekly sync 2026-04-07, or SteerCo April"
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [High, Medium, Low]
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      placeholder: Any context, blockers, or dependencies relevant to this action
