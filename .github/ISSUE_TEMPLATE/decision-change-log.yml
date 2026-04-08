@@ -1,0 +1,55 @@
+name: Decision / Change Log Entry
+description: Record a program decision or approved change to baseline (iPGM 5.5)
+labels: ["decision"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Entry Type
+      options: [Decision, Change Request, Approved Change]
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: Decision / Change Summary
+      placeholder: One-line description
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Rationale
+      placeholder: Why was this decision made? What problem does this change solve?
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on Scope / Schedule / Cost
+      placeholder: Describe any impact on the program baseline — or "None"
+  - type: input
+    id: decision_maker
+    attributes:
+      label: Decision Made By
+      placeholder: Name(s) and role(s)
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of Decision
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+  - type: textarea
+    id: follow_up
+    attributes:
+      label: Follow-Up Actions Required
+      placeholder: What needs to happen as a result of this decision?
+  - type: checkboxes
+    id: escalate
+    attributes:
+      label: Escalate to Portfolio Board?
+      options:
+        - label: Yes — apply the `portfolio-report` label to surface this on the iPGM board
