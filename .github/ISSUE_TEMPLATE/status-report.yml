@@ -1,0 +1,53 @@
+name: Status Report
+description: Weekly or monthly program status update (iPGM 6.2)
+labels: ["status-report"]
+body:
+  - type: input
+    id: period
+    attributes:
+      label: Reporting Period
+      placeholder: "e.g. Week of 2026-04-07 or April 2026"
+    validations:
+      required: true
+  - type: dropdown
+    id: overall_status
+    attributes:
+      label: Overall Program Status
+      options: [Green - On Track, Yellow - At Risk, Red - Off Track]
+    validations:
+      required: true
+  - type: textarea
+    id: accomplishments
+    attributes:
+      label: Accomplishments This Period
+      placeholder: What was completed since the last report?
+    validations:
+      required: true
+  - type: textarea
+    id: next_period
+    attributes:
+      label: Goals for Next Period
+      placeholder: What is the team committed to delivering next?
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Changes to Plan Since Last Update
+      placeholder: Scope, schedule, resource changes — or "None"
+  - type: textarea
+    id: risks
+    attributes:
+      label: Active Risks & Issues
+      placeholder: Top 3 risks or issues currently being managed
+  - type: input
+    id: milestone_status
+    attributes:
+      label: Next Key Milestone
+      placeholder: "Name | Target Date | Status"
+  - type: checkboxes
+    id: escalate
+    attributes:
+      label: Escalate to Portfolio Board?
+      options:
+        - label: Yes — apply the `portfolio-report` label to surface this on the iPGM board
